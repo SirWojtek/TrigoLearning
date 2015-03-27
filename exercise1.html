@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Trigo Learning</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Trigo <span class="logo_colour">Learning</span></a></h1>
+          <h2>Twój nauczyciel trygonometrii!</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="exercise1.html">Ćwiczenia</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">First Link</a></li>
+            <li><a href="#">Another Link</a></li>
+            <li><a href="#">And Another</a></li>
+            <li><a href="#">Last One</a></li>
+          </ul>
+        </div>
+        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
+        <div class="sidebar">
+          <h3>More Useful Links</h3>
+          <ul>
+            <li><a href="#">First Link</a></li>
+            <li><a href="#">Another Link</a></li>
+            <li><a href="#">And Another</a></li>
+            <li><a href="#">Last One</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <button onclick="hello()">Hello</button></br></br>
+        <p id="text"></p>
+        <p id="eq" onclick="changeText()">sin(x)</p>
+      </div>
+    </div>
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><a href="index.html">Home</a>
+      <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/hello.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>
