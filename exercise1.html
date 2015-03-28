@@ -54,9 +54,15 @@
         </div>
       </div>
       <div class="content">
-        <button onclick="hello()">Hello</button></br></br>
-        <p id="text"></p>
-        <p id="eq" onclick="changeText()">sin(x)</p>
+        <h4>Wzory</h4></br>
+        <ul id="formulas"></ul>
+        <center>
+          <div id="equation"></div></br>
+          <button id="begin">Od początku</button>
+          <button id="previous">Poprzedni krok</button>
+          <button id="next">Następny krok</button>
+          <button id="shuffle">Zmień równanie</button>
+      </center>
       </div>
     </div>
     <div id="scroll">
@@ -71,7 +77,8 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="js/hello.js"></script>
+  <script type="text/javascript" src="js/string_format.js"></script>
+  <script type="text/javascript" src="js/exercise.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('ul.sf-menu').sooperfish();
