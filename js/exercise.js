@@ -19,7 +19,7 @@ var EXERCISE = (function() {
         step : function() {
             var steps = currentEquation.steps;
 
-            if (steps.length < currentStep) {
+            if (currentStep < steps.length) {
                 steps[currentStep]();
                 currentStep++;
             }

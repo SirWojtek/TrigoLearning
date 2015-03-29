@@ -1,6 +1,7 @@
 
 var EQUATIONS = (function() {
     var formulasDock = "#formulas";
+    var equationDock = "#equation";
 
     var Symbols = {
         sin : "<span id=\"sin\">sin(x)</span>",
@@ -22,7 +23,7 @@ var EQUATIONS = (function() {
             for (i in this.formulas) {
                 form_text += "<li id=\"{0}\">{1}</li>".format(i, this.formulas[i]);
             }
-            $("#formulas").html(form_text);
+            $(formulasDock).html(form_text);
         }
     };
 
@@ -31,21 +32,23 @@ var EQUATIONS = (function() {
         this.steps = steps;
     };
 
-    function toggleHighlight(element) {
-        $(element).toggle("highlight");
+    function highlight(element) {
+        $(element).css("background-color", "yellow");
     };
 
     equations = [
         new Equation(
             "{0} * {1} = {2}".format(Symbols.cos, Symbols.tg, Symbols.sin), [
                 function() {
-                    toggleHighlight("#")
+                    highlight(formulasDock + ">#1>#tg");
+                    highlight(equationDock + ">#tg");
                 }
             ]),
         new Equation(
             "{0} * {1} = {2}".format(Symbols.sin, Symbols.ctg, Symbols.cos), [
                 function() {
-
+                    highlight(formulasDock + ">#2>#ctg");
+                    highlight(equationDock + ">#ctg");
                 }
             ])
     ];
