@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="content">
-        <h4>Wzory</h4></br>
+        <h4>Wzory</h4>
         <ul id="formulas"></ul>
         <center>
           <div id="equation"></div></br>
@@ -78,11 +78,36 @@
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
   <script type="text/javascript" src="js/string_format.js"></script>
+  <script type="text/javascript" src="js/equations.js"></script>
   <script type="text/javascript" src="js/exercise.js"></script>
   <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function()
+    {
       $('ul.sf-menu').sooperfish();
       $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+
+      EQUATIONS.Formulas.fillFormulas();
+      EXERCISE.fillEquation();
+    });
+
+    $("#begin").click(function()
+    {
+      EQUATIONS.reset();
+    });
+
+    $("#previous").click(function()
+    {
+      EQUATIONS.stepBack();
+    });
+
+    $("#next").click(function()
+    {
+      EQUATIONS.step();
+    });
+
+    $("#shuffle").click(function()
+    {
+      EQUATIONS.fillEquation();
     });
   </script>
 </body>
