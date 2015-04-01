@@ -5,34 +5,53 @@ var EXERCISE = (function() {
     var currentStep = 0;
     var dockId = "#equation";
 
+    function clearHighlight() {
+        EQUATIONS.Formulas.clear();
+        $(dockId).find("*").css("background-color", "transparent");
+
+    };
+
+    function clearEquation() {
+        clearHighlight();
+        $(dockId).html(currentEquation.eqString);
+    }
+
+    function getNewEquationIndex() {
+        var eqIndex = currentEquationIndex;
+        while (eqIndex == currentEquationIndex) {
+            eqIndex = Math.floor(EQUATIONS.equations.length * Math.random())
+        }
+        return eqIndex
+    }
+
+    function play(stepsNo) {
+        clearEquation();
+        for (i = 0; i <= stepsNo; i++)
+        {
+            clearHighlight();
+            currentEquation.steps[i]();
+        }
+    }
+
     return {
         fillEquation : function() {
-            var eqIndex = currentEquationIndex;
-            while (eqIndex == currentEquationIndex) {
-                eqIndex = Math.floor(EQUATIONS.equations.length * Math.random())    
-            }
-
-            currentEquationIndex = eqIndex;
+            currentEquationIndex = getNewEquationIndex();
             currentEquation = EQUATIONS.equations[currentEquationIndex];
-            $(dockId).html(currentEquation.eqString);
+            currentStep = 0;
+            clearEquation();
         },
         step : function() {
-            var steps = currentEquation.steps;
-
-            if (currentStep < steps.length) {
-                steps[currentStep]();
-                currentStep++;
+            if (currentStep + 1 < currentEquation.steps.length) {
+                play(++currentStep);
             }
         },
         stepBack : function() {
-            var steps = currentEquation.steps;
-
             if (currentStep > 0) {
-                currentStep--;
-                steps[currentStep]();
+                play(--currentStep);
             }
         },
         reset : function() {
+            clearEquation();
             currentStep = 0;
         }
     };
