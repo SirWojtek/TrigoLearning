@@ -59,83 +59,64 @@
         </div>
       </div>
       <div class="content">
-        <h4>Definicje funkcji trygonometrycznych</h4>
-		<canvas id="plaszczyzna" width="400" height="250" ></canvas><!--style='background-color: lightgreen;'-->
-		<script>
-		var context = null;
-		var canvas = null;
-		window.onload = function(){
-		 canvas = document.getElementById("plaszczyzna");
-		 context = canvas.getContext("2d");
-		 drawTriangle2();
-		 //drawTriangle(200,50);
-		 //draw();		 
-		 //canvas.onclick = function(e) {draw(e);};
-		};
-		//funkcja rysująca trójkąt prostokątny. Argumenty x0,y0 -współrzedne wierzchołka z przy kącie 90 stopni
-		function drawTriangle(x0,y0)
-		{
-			context.beginPath();
-			context.strokeStyle = "rgba(0,255,0,1)";
-			context.lineWidth =5;
-			context.lineJoin = "bevel";
-			context.miterLimit = 2;
-			context.moveTo(x0,y0); //rysowanie zaczynamy od punktów x0,y0 
-			context.lineTo(x0,y0+100);
-			context.lineTo(x0,y0+200);
-			context.lineTo(x0+200,y0+200);
-			 context.closePath();
-			 context.stroke();
-		}
+        <h4>Wykresy funkcji trygonometrycznych</h4>
+		<br>
+		<h5>Funkcja sinus</h5>
+		<canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;"></canvas>
 		
-		function drawTriangle2()
-		{
-			 context.beginPath();
-			 context.strokeStyle = "rgba(0,255,0,1)";
-			 context.lineWidth =5;
-			 context.lineJoin = "bevel";
-			 context.miterLimit = 2;
-			context.moveTo(100,50); //rysowanie zaczynamy od punktów 35,10 - tam więc przesuwamy nasze piórko
-			context.lineTo(100,150);
-			context.lineTo(100,200);
-			context.lineTo(300,200);
-			//c.moveTo(230,200);
-			//c.bezierCurveTo(232,172,237,176,240,180);
-			context.font = "15px serif";
-			//context.fillStyle = '#29DFDB';
-			context.fillText('a',80,130);			
-			context.fillText('b',200,120);
-			context.fillText('c',190,220);
-			context.fillText('α',250,190);
-			 context.closePath();
-			 context.stroke();
-		}
-		
-		function drawTriangle3(e)
-		{
-			context.beginPath();
-			//context.strokeStyle = "rgba(0,255,0,1)";
-			context.lineWidth = 20;
-			//context.lineJoin = "bevel";
-			//context.miterLimit = 2;
-			context.moveTo(35,10); //rysowanie zaczynamy od punktów 35,10 - tam więc przesuwamy nasze piórko
-			context.lineTo(60,40);
-			context.lineTo(10,40);
-			context.lineTo(35,10);
-			context.stroke();		 
-			
-		 /*context.beginPath();
-		 context.arc(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop, 20, 0, 2 * Math.PI);
-		 context.closePath();
-		 context.stroke();*/
-		}
+		<script type="text/javascript">
+			var context = null;
+			var canvas = null;
+			window.onload = function(){
+			 canvas = document.getElementById("myCanvas");
+			 context = canvas.getContext("2d");	 
+			 draw();		 
+			};
+			function fun1(x) {return Math.sin(x);  }
+			function fun2(x) {return Math.cos(3*x);}
+
+			function draw() {
+			 var canvas = document.getElementById("myCanvas");
+			 if (null==canvas || !canvas.getContext) return;
+
+			 var axes={}, ctx=canvas.getContext("2d");
+			 axes.x0 = .5 + .5*canvas.width;  // x0 pixels from left to x=0
+			 axes.y0 = .5 + .5*canvas.height; // y0 pixels from top to y=0
+			 axes.scale = 40;                 // 40 pixels from x=0 to x=1
+			 axes.doNegativeX = true;
+
+			 showAxes(ctx,axes);
+			 funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
+			 funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
+			}
+
+			function funGraph (ctx,axes,func,color,thick) {
+			 var xx, yy, dx=4, x0=axes.x0, y0=axes.y0, scale=axes.scale;
+			 var iMax = Math.round((ctx.canvas.width-x0)/dx);
+			 var iMin = axes.doNegativeX ? Math.round(-x0/dx) : 0;
+			 ctx.beginPath();
+			 ctx.lineWidth = thick;
+			 ctx.strokeStyle = color;
+
+			 for (var i=iMin;i<=iMax;i++) {
+			  xx = dx*i; yy = scale*func(xx/scale);
+			  if (i==iMin) ctx.moveTo(x0+xx,y0-yy);
+			  else         ctx.lineTo(x0+xx,y0-yy);
+			 }
+			 ctx.stroke();
+			}
+
+			function showAxes(ctx,axes) {
+			 var x0=axes.x0, w=ctx.canvas.width;
+			 var y0=axes.y0, h=ctx.canvas.height;
+			 var xmin = axes.doNegativeX ? 0 : x0;
+			 ctx.beginPath();
+			 ctx.strokeStyle = "rgb(128,128,128)"; 
+			 ctx.moveTo(xmin,y0); ctx.lineTo(w,y0);  // X axis
+			 ctx.moveTo(x0,0);    ctx.lineTo(x0,h);  // Y axis
+			 ctx.stroke();
+			}
 		</script>
-		 <ul>
-            <li>sinα = a/c</li>
-            <li>cosα = b/c</li>
-            <li>tgα = a/b</li>
-            <li>ctgα = b/a</li>
-         </ul>
       </div>
     </div>
     <div id="scroll">
