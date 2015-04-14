@@ -9,7 +9,10 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-</head>
+
+<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+
+  </head>
 
 <body>
   <div id="main">
@@ -55,15 +58,62 @@
         </div>
       </div>
       <div class="content">
-        <h4>Wzory</h4>
-        <ul id="formulas"></ul>
-        <center>
-          <div id="equation"></div></br>
-          <button id="begin">Od początku</button>
-          <button id="previous">Poprzedni krok</button>
-          <button id="next">Następny krok</button>
-          <button id="shuffle">Zmień równanie</button>
-      </center>
+        <h4>Definicje funkcji trygonometrycznych</h4>
+		<canvas id="plaszczyzna" width="400" height="250" ></canvas><!--style='background-color: lightgreen;'-->
+		<script>
+		var context = null;
+		var canvas = null;
+		window.onload = function(){
+		 canvas = document.getElementById("plaszczyzna");
+		 context = canvas.getContext("2d");
+		 draw();		 
+		 //canvas.onclick = function(e) {draw(e);};
+		};
+		function draw()
+		{
+			 context.beginPath();
+			 context.strokeStyle = "rgba(0,255,0,1)";
+			 context.lineWidth =5;
+			 context.lineJoin = "bevel";
+			 context.miterLimit = 2;
+			context.moveTo(100,50); //rysowanie zaczynamy od punktów 35,10 - tam więc przesuwamy nasze piórko
+			context.lineTo(100,150);
+			context.lineTo(100,200);
+			context.lineTo(300,200);
+			context.fillText('a',80,130);			
+			context.fillText('b',190,130);
+			context.fillText('c',190,210);
+			context.fillText('α',250,190);
+			//context.moveTo(210,210);
+			//context.lineTo(230,170);
+			 context.closePath();
+			 context.stroke();
+		}
+		function drawTriangle(e)
+		{
+			context.beginPath();
+			//context.strokeStyle = "rgba(0,255,0,1)";
+			context.lineWidth = 20;
+			//context.lineJoin = "bevel";
+			//context.miterLimit = 2;
+			context.moveTo(35,10); //rysowanie zaczynamy od punktów 35,10 - tam więc przesuwamy nasze piórko
+			context.lineTo(60,40);
+			context.lineTo(10,40);
+			context.lineTo(35,10);
+			context.stroke();		 
+			
+		 /*context.beginPath();
+		 context.arc(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop, 20, 0, 2 * Math.PI);
+		 context.closePath();
+		 context.stroke();*/
+		}
+		</script>
+		 <ul>
+            <li>sinα = a/c</li>
+            <li>cosα = b/c</li>
+            <li>tgα = a/b</li>
+            <li>ctgα = b/a</li>
+         </ul>
       </div>
     </div>
     <div id="scroll">
