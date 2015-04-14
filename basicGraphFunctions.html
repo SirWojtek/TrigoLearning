@@ -59,24 +59,15 @@
         </div>
       </div>
       <div class="content">
-        <h4>Wykresy funkcji trygonometrycznych</h4>
-		<br>
-		<h5>Funkcja sinus</h5>
-		<canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;"></canvas>
-		
-		<script type="text/javascript">
-			var context = null;
-			var canvas = null;
-			window.onload = function(){
-			 canvas = document.getElementById("myCanvas");
-			 context = canvas.getContext("2d");	 
-			 draw();		 
-			};
+	  	<script type="text/javascript">
 			function fun1(x) {return Math.sin(x);  }
-			function fun2(x) {return Math.cos(3*x);}
+			function fun2(x) {return Math.cos(x);  }
+			function fun3(x) {return Math.tan(x);  }
+			function fun4(x) {return (1/Math.tan(x));  }
+			function fun5(x) {return Math.cos(3*x);}
 
 			function draw() {
-			 var canvas = document.getElementById("myCanvas");
+			 var canvas = document.getElementById(arguments[0]);
 			 if (null==canvas || !canvas.getContext) return;
 
 			 var axes={}, ctx=canvas.getContext("2d");
@@ -86,8 +77,27 @@
 			 axes.doNegativeX = true;
 
 			 showAxes(ctx,axes);
-			 funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
-			 funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
+			 switch(arguments[1]) {
+				case 1:
+					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
+					break;
+				case 2:
+					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1); 
+					break;
+				case 3:
+					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1); 
+					break;
+				case 4:
+					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1); 
+					break;
+				case 5:
+					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2); 
+					break;					
+				//default:
+				//	default code block
+			}
+			 
+			 //funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
 			}
 
 			function funGraph (ctx,axes,func,color,thick) {
@@ -117,52 +127,116 @@
 			 ctx.stroke();
 			}
 		</script>
-      </div>
-    </div>
-    <div id="scroll">
-      <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
-    </div>
-    <footer>
-      <p><a href="index.html">Home</a>
-      <p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
-    </footer>
-  </div>
-  <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="js/string_format.js"></script>
-  <script type="text/javascript" src="js/equations.js"></script>
-  <script type="text/javascript" src="js/exercise.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function()
-    {
-      $('ul.sf-menu').sooperfish();
-      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
-
-      EQUATIONS.Formulas.fillFormulas();
-      EXERCISE.fillEquation();
-    });
-
-    $("#begin").click(function()
-    {
-      EXERCISE.reset();
-    });
-
-    $("#previous").click(function()
-    {
-      EXERCISE.stepBack();
-    });
-
-    $("#next").click(function()
-    {
-      EXERCISE.step();
-    });
-
-    $("#shuffle").click(function()
-    {
-      EXERCISE.fillEquation();
-    });
-  </script>
-</body>
-</html>
+        <h4>Wykresy funkcji trygonometrycznych</h4>
+		<br>
+		<p style="color:red">Funkcja sinus</p>
+		<canvas id="sinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
+		<script type="text/javascript">
+			//window.onload = function(){
+			 draw("sinus",1);		 
+			//};
+		</script>
+		<br>
+		<p style="color:red">Funkcja cosinus</p>
+		<canvas id="cosinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
+		<script>
+			//window.onload = function(){
+			draw("cosinus",2);		 
+			//};
+		</script>
+		<br>
+		<p style="color:red">Funkcja tangens</p>
+		<canvas id="tangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
+		<script>
+			//window.onload = function(){
+			draw("tangens",3);		 
+			//};
+		</script>
+		<br>
+		<p style="color:red">Funkcja cotangens</p>
+		<canvas id="cotangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
+		<script>
+		//window.onload = function(){
+		draw("cotangens",4);		 
+		//};
+		</script>
+		<br>
+		<h4>Ćwiczenia<h4>
+		<canvas id="cwiczenia" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
+		<script>
+		//window.onload = function(){
+		draw("cwiczenia",5);		 
+		//};
+		</script>
+		<p>Jaki jest wzór funkcji ?</p>
+		<script>
+		function check_form() {
+		 var f=document.cwiczenie1;
+			if ( f.Answer3.checked ==true && f.Answer1.checked == false  && f.Answer2.checked == false && f.Answer4.checked == false )
+			{
+				echo '<br><p style="color:green">Odpowiedź prawidłowa</p> '
+				return true;
+			}
+			else
+			{
+				echo '<br><p style="color:red">Odpowiedź błędna</p> '
+				return false;
+			}
+		}
+		</script>
+		<form name="cwiczenie1">
+			<input type="checkbox" name="Answer1" value="0">y = sin(x)<br>
+			<input type="checkbox" name="Answer2" value="0">y = cos(x)<br>
+			<input type="checkbox" name="Answer3" value="1">y = sin(3x)<br>
+			<input type="checkbox" name="Answer4" value="0">y = sin(x+3)<br>
+			<input type="Submit" value="Sprawdź" onclick="return check_form()" >			
+		</form>	
+		</div>
+		</div>
+		<div id="scroll">
+		<a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
+		</div>
+		<footer>
+		<p><a href="index.html">Home</a>
+		<p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+		</footer>
+		</div>
+		<!-- javascript at the bottom for fast page loading -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+		<script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+		<script type="text/javascript" src="js/string_format.js"></script>
+		<script type="text/javascript" src="js/equations.js"></script>
+		<script type="text/javascript" src="js/exercise.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+		$('ul.sf-menu').sooperfish();
+		$('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+		
+		EQUATIONS.Formulas.fillFormulas();
+		EXERCISE.fillEquation();
+		});
+		
+		$("#begin").click(function()
+		{
+		EXERCISE.reset();
+		});
+		
+		$("#previous").click(function()
+		{
+		EXERCISE.stepBack();
+		});
+		
+		$("#next").click(function()
+		{
+		EXERCISE.step();
+		});
+		
+		$("#shuffle").click(function()
+		{
+		EXERCISE.fillEquation();
+		});
+		</script>
+		</body>
+	</html>
