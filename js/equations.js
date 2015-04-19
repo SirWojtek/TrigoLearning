@@ -59,9 +59,6 @@ var EQUATIONS = (function() {
                     changeText(equationDock + ">#tg",
                         "{0}{1}{2}".format(Symbols.sin, Symbols.d, Symbols.cos));
                     highlight(equationDock + ">#tg");
-                    highlight(formulasDock, + ">#1>#sin");
-                    highlight(formulasDock, + ">#1>#m");
-                    highlight(formulasDock, + ">#1>#cos");
                 },
                 function() {
                     highlight(equationDock + ">#tg>#cos");
