@@ -29,8 +29,9 @@
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
 			<li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
-            	<li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>           
+            <li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>           
 			<li><a href="exercise1.html">Ćwiczenia</a></li>
+			<li><a href="exercise2.html">Ćwiczenia 2</a></li>
           </ul>
         </div>
       </nav>
@@ -122,75 +123,58 @@
 			 var xmin = axes.doNegativeX ? 0 : x0;
 			 ctx.beginPath();
 			 ctx.strokeStyle = "rgb(128,128,128)"; 
-			 ctx.moveTo(xmin,y0); ctx.lineTo(w,y0);  // X axis
-			 ctx.moveTo(x0,0);    ctx.lineTo(x0,h);  // Y axis
+			 ctx.moveTo(xmin,y0); 
+			 ctx.lineTo(w,y0);  // X axis
+			 ctx.font = "15px bolder serif";
+			 //context.fillStyle = '#29DFDB';
+			 ctx.fillText('x',w-8,y0+12);		//name X axis
+			 ctx.fillText('0',x0+2,y0+12);		//point ()0,0)
+			 ctx.moveTo(x0,0); 
+			 ctx.lineTo(x0,h);  				// Y axis       
+			 ctx.fillText('y',x0-12,8);			//name Y axis
+			 //draw pi i - pi
+			 ctx.moveTo(x0+125,y0-5); 
+			 ctx.lineTo(x0+125,y0+5);
+			 ctx.fillText('π',x0+120,y0+12);
+			 ctx.moveTo(x0-125,y0-5);
+			 ctx.lineTo(x0-125,y0+5);
+			 ctx.fillText('-π',x0-135,y0+12);
 			 ctx.stroke();
 			}
 		</script>
         <h4>Wykresy funkcji trygonometrycznych</h4>
 		<br>
-		<p style="color:red">Funkcja sinus</p>
+		<p style="color:red" ><b>Funkcja sinus &emsp;&emsp;&emsp;&emsp;&emsp; y=sin(x)</b></p>
 		<canvas id="sinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script type="text/javascript">
 			//window.onload = function(){
 			 draw("sinus",1);		 
 			//};
 		</script>
-		<br>
-		<p style="color:red">Funkcja cosinus</p>
+		<br><br><br>
+		<p style="color:red"><b>Funkcja cosinus &emsp;&emsp;&emsp;&emsp;&emsp; y=cos(x)</b></p>
 		<canvas id="cosinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 			//window.onload = function(){
 			draw("cosinus",2);		 
 			//};
 		</script>
-		<br>
-		<p style="color:red">Funkcja tangens</p>
+		<br><br><br>
+		<p style="color:red"><b>Funkcja tangens &emsp;&emsp;&emsp;&emsp;&emsp; y=tg(x)</b></p>
 		<canvas id="tangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 			//window.onload = function(){
 			draw("tangens",3);		 
 			//};
 		</script>
-		<br>
-		<p style="color:red">Funkcja cotangens</p>
+		<br><br><br>
+		<p style="color:red"><b>Funkcja cotangens &emsp;&emsp;&emsp;&emsp;&emsp; y=ctg(x)</b></p>
 		<canvas id="cotangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 		//window.onload = function(){
 		draw("cotangens",4);		 
 		//};
-		</script>
-		<br>
-		<h4>Ćwiczenia<h4>
-		<canvas id="cwiczenia" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
-		<script>
-		//window.onload = function(){
-		draw("cwiczenia",5);		 
-		//};
-		</script>
-		<p>Jaki jest wzór funkcji ?</p>
-		<script>
-		function check_form() {
-		 var f=document.cwiczenie1;
-			if ( f.Answer3.checked ==true && f.Answer1.checked == false  && f.Answer2.checked == false && f.Answer4.checked == false )
-			{
-				echo '<br><p style="color:green">Odpowiedź prawidłowa</p> '
-				return true;
-			}
-			else
-			{
-				echo '<br><p style="color:red">Odpowiedź błędna</p> '
-				return false;
-			}
-		}
-		</script>
-		<form name="cwiczenie1">
-			<input type="checkbox" name="Answer1" value="0">y = sin(x)<br>
-			<input type="checkbox" name="Answer2" value="0">y = cos(x)<br>
-			<input type="checkbox" name="Answer3" value="1">y = sin(3x)<br>
-			<input type="checkbox" name="Answer4" value="0">y = sin(x+3)<br>
-			<input type="Submit" value="Sprawdź" onclick="return check_form()" >			
-		</form>	
+		</script>	
 		</div>
 		</div>
 		<div id="scroll">
