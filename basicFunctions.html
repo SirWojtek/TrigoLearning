@@ -28,8 +28,8 @@
         <div id="menu_container">
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
-			<li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
-            	<li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>           
+			<li><a href="basicFunctions.html" id="selected">Podstawowe funkcje</a></li>
+            	<li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>
 			<li><a href="exercise1.html">Ćwiczenia</a></li>
           </ul>
         </div>
@@ -39,22 +39,12 @@
       <div id="sidebar_container">
         <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
         <div class="sidebar">
-          <h3>Useful Links</h3>
+          <h3>Przydatne linki</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
-          </ul>
-        </div>
-        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
-        <div class="sidebar">
-          <h3>More Useful Links</h3>
-          <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="http://pl.wikipedia.org/wiki/Funkcje_trygonometryczne">Wikipedia - Funkcje trygonometryczne</a></li>
+            <li><a href="http://edudu.pl/sciaga-funkcje-trygonometryczne-kata-ostrego-w-trojkacie-prostokatnym,defcbde3047c891d78f9">Ściąga eksperta</a></li>
+            <li><a href="http://matematyka.pisz.pl/strona/3421.html">Matematyka.pisz</a></li>
+            <li><a href="https://www.youtube.com/watch?v=c2UlPn2WM5c">YouTube - lekcja interaktywna</a></li>
           </ul>
         </div>
       </div>
@@ -69,7 +59,7 @@
 		 context = canvas.getContext("2d");
 		 drawTriangle2();
 		 //drawTriangle(200,50);
-		 //draw();		 
+		 //draw();
 		 //canvas.onclick = function(e) {draw(e);};
 		};
 		//funkcja rysująca trójkąt prostokątny. Argumenty x0,y0 -współrzedne wierzchołka z przy kącie 90 stopni
@@ -80,14 +70,14 @@
 			context.lineWidth =5;
 			context.lineJoin = "bevel";
 			context.miterLimit = 2;
-			context.moveTo(x0,y0); //rysowanie zaczynamy od punktów x0,y0 
+			context.moveTo(x0,y0); //rysowanie zaczynamy od punktów x0,y0
 			context.lineTo(x0,y0+100);
 			context.lineTo(x0,y0+200);
 			context.lineTo(x0+200,y0+200);
 			 context.closePath();
 			 context.stroke();
 		}
-		
+
 		function drawTriangle2()
 		{
 			 context.beginPath();
@@ -103,14 +93,14 @@
 			//c.bezierCurveTo(232,172,237,176,240,180);
 			context.font = "15px serif";
 			//context.fillStyle = '#29DFDB';
-			context.fillText('a',80,130);			
+			context.fillText('a',80,130);
 			context.fillText('b',200,120);
 			context.fillText('c',190,220);
 			context.fillText('α',250,190);
 			 context.closePath();
 			 context.stroke();
 		}
-		
+
 		function drawTriangle3(e)
 		{
 			context.beginPath();
@@ -122,8 +112,8 @@
 			context.lineTo(60,40);
 			context.lineTo(10,40);
 			context.lineTo(35,10);
-			context.stroke();		 
-			
+			context.stroke();
+
 		 /*context.beginPath();
 		 context.arc(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop, 20, 0, 2 * Math.PI);
 		 context.closePath();

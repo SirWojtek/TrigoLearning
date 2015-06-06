@@ -29,7 +29,7 @@
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
 			<li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
-            	<li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>           
+            	<li><a href="basicGraphFunctions.html" id="selected">Wykresy funkcji</a></li>
 			<li><a href="exercise1.html">Ćwiczenia</a></li>
           </ul>
         </div>
@@ -39,22 +39,12 @@
       <div id="sidebar_container">
         <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
         <div class="sidebar">
-          <h3>Useful Links</h3>
+          <h3>Przydatne linki</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
-          </ul>
-        </div>
-        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
-        <div class="sidebar">
-          <h3>More Useful Links</h3>
-          <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="http://pl.wikipedia.org/wiki/Funkcje_trygonometryczne">Wikipedia - Funkcje trygonometryczne</a></li>
+            <li><a href="http://edudu.pl/sciaga-funkcje-trygonometryczne-kata-ostrego-w-trojkacie-prostokatnym,defcbde3047c891d78f9">Ściąga eksperta</a></li>
+            <li><a href="http://matematyka.pisz.pl/strona/3421.html">Matematyka.pisz</a></li>
+            <li><a href="https://www.youtube.com/watch?v=c2UlPn2WM5c">YouTube - lekcja interaktywna</a></li>
           </ul>
         </div>
       </div>
@@ -79,24 +69,24 @@
 			 showAxes(ctx,axes);
 			 switch(arguments[1]) {
 				case 1:
-					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
+					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1);
 					break;
 				case 2:
-					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1); 
+					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1);
 					break;
 				case 3:
-					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1); 
+					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1);
 					break;
 				case 4:
-					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1); 
+					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1);
 					break;
 				case 5:
-					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2); 
-					break;					
+					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2);
+					break;
 				//default:
 				//	default code block
 			}
-			 
+
 			 //funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
 			}
 
@@ -121,7 +111,7 @@
 			 var y0=axes.y0, h=ctx.canvas.height;
 			 var xmin = axes.doNegativeX ? 0 : x0;
 			 ctx.beginPath();
-			 ctx.strokeStyle = "rgb(128,128,128)"; 
+			 ctx.strokeStyle = "rgb(128,128,128)";
 			 ctx.moveTo(xmin,y0); ctx.lineTo(w,y0);  // X axis
 			 ctx.moveTo(x0,0);    ctx.lineTo(x0,h);  // Y axis
 			 ctx.stroke();
@@ -133,7 +123,7 @@
 		<canvas id="sinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script type="text/javascript">
 			//window.onload = function(){
-			 draw("sinus",1);		 
+			 draw("sinus",1);
 			//};
 		</script>
 		<br>
@@ -141,7 +131,7 @@
 		<canvas id="cosinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 			//window.onload = function(){
-			draw("cosinus",2);		 
+			draw("cosinus",2);
 			//};
 		</script>
 		<br>
@@ -149,7 +139,7 @@
 		<canvas id="tangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 			//window.onload = function(){
-			draw("tangens",3);		 
+			draw("tangens",3);
 			//};
 		</script>
 		<br>
@@ -157,7 +147,7 @@
 		<canvas id="cotangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 		//window.onload = function(){
-		draw("cotangens",4);		 
+		draw("cotangens",4);
 		//};
 		</script>
 		<br>
@@ -165,7 +155,7 @@
 		<canvas id="cwiczenia" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
 		//window.onload = function(){
-		draw("cwiczenia",5);		 
+		draw("cwiczenia",5);
 		//};
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
@@ -189,8 +179,8 @@
 			<input type="checkbox" name="Answer2" value="0">y = cos(x)<br>
 			<input type="checkbox" name="Answer3" value="1">y = sin(3x)<br>
 			<input type="checkbox" name="Answer4" value="0">y = sin(x+3)<br>
-			<input type="Submit" value="Sprawdź" onclick="return check_form()" >			
-		</form>	
+			<input type="Submit" value="Sprawdź" onclick="return check_form()" >
+		</form>
 		</div>
 		</div>
 		<div id="scroll">
@@ -213,30 +203,30 @@
 		{
 		$('ul.sf-menu').sooperfish();
 		$('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
-		
+
 		EQUATIONS.Formulas.fillFormulas();
 		EXERCISE.fillEquation();
 		});
-		
+
 		$("#begin").click(function()
 		{
 		EXERCISE.reset();
 		});
-		
+
 		$("#previous").click(function()
 		{
 		EXERCISE.stepBack();
 		});
-		
+
 		$("#next").click(function()
 		{
 		EXERCISE.step();
 		});
-		
+
 		$("#shuffle").click(function()
 		{
 		EXERCISE.fillEquation();
 		});
 		</script>
 		</body>
-	</html>
+	</html>
