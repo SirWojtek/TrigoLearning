@@ -538,3 +538,10 @@ ul#nav li a#selected {
 ul#nav li a:hover,ul#nav li a:focus {
   color:#09D4FF;
 }
+
+div#equation_block {
+  padding: 10px;
+  background-color:#FFFFFF;
+  font-family: "Courier New", Courier, monospace;
+  color:#000;
+}
