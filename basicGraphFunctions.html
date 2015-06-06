@@ -28,10 +28,11 @@
         <div id="menu_container">
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
-			<li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
-            <li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>           
-			<li><a href="exercise1.html">Ćwiczenia</a></li>
+            <li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
+            <li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>
+            <li><a href="exercise1.html">Ćwiczenia</a></li>
 			<li><a href="exercise2.html">Ćwiczenia 2</a></li>
+            <li><a href="lessons.html" id="selected">Lekcje</a></li>
           </ul>
         </div>
       </nav>
@@ -40,22 +41,11 @@
       <div id="sidebar_container">
         <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
         <div class="sidebar">
-          <h3>Useful Links</h3>
+          <h3>Przydatne linki</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
-          </ul>
-        </div>
-        <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
-        <div class="sidebar">
-          <h3>More Useful Links</h3>
-          <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="http://pl.wikipedia.org/wiki/Funkcje_trygonometryczne">Wikipedia - Funkcje trygonometryczne</a></li>
+            <li><a href="http://edudu.pl/sciaga-funkcje-trygonometryczne-kata-ostrego-w-trojkacie-prostokatnym,defcbde3047c891d78f9">Ściąga eksperta</a></li>
+            <li><a href="http://matematyka.pisz.pl/strona/3421.html">Matematyka.pisz</a></li>
           </ul>
         </div>
       </div>
@@ -80,24 +70,24 @@
 			 showAxes(ctx,axes);
 			 switch(arguments[1]) {
 				case 1:
-					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
+					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1);
 					break;
 				case 2:
-					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1); 
+					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1);
 					break;
 				case 3:
-					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1); 
+					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1);
 					break;
 				case 4:
-					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1); 
+					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1);
 					break;
 				case 5:
-					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2); 
-					break;					
+					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2);
+					break;
 				//default:
 				//	default code block
 			}
-			 
+
 			 //funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
 			}
 
@@ -147,34 +137,26 @@
 		<p style="color:red" ><b>Funkcja sinus &emsp;&emsp;&emsp;&emsp;&emsp; y=sin(x)</b></p>
 		<canvas id="sinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script type="text/javascript">
-			//window.onload = function(){
-			 draw("sinus",1);		 
-			//};
+			 draw("sinus",1);
 		</script>
 		<br><br><br>
 		<p style="color:red"><b>Funkcja cosinus &emsp;&emsp;&emsp;&emsp;&emsp; y=cos(x)</b></p>
 		<canvas id="cosinus" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			//window.onload = function(){
-			draw("cosinus",2);		 
-			//};
+			draw("cosinus",2);
 		</script>
 		<br><br><br>
 		<p style="color:red"><b>Funkcja tangens &emsp;&emsp;&emsp;&emsp;&emsp; y=tg(x)</b></p>
 		<canvas id="tangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			//window.onload = function(){
-			draw("tangens",3);		 
-			//};
+			draw("tangens",3);
 		</script>
 		<br><br><br>
 		<p style="color:red"><b>Funkcja cotangens &emsp;&emsp;&emsp;&emsp;&emsp; y=ctg(x)</b></p>
 		<canvas id="cotangens" width="500" height="400" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-		//window.onload = function(){
-		draw("cotangens",4);		 
-		//};
-		</script>	
+			draw("cotangens",4);
+		</script>
 		</div>
 		</div>
 		<div id="scroll">
@@ -185,42 +167,5 @@
 		<p>Copyright &copy; CSS3_two | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
 		</footer>
 		</div>
-		<!-- javascript at the bottom for fast page loading -->
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
-		<script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-		<script type="text/javascript" src="js/string_format.js"></script>
-		<script type="text/javascript" src="js/equations.js"></script>
-		<script type="text/javascript" src="js/exercise.js"></script>
-		<script type="text/javascript">
-		$(document).ready(function()
-		{
-		$('ul.sf-menu').sooperfish();
-		$('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
-		
-		EQUATIONS.Formulas.fillFormulas();
-		EXERCISE.fillEquation();
-		});
-		
-		$("#begin").click(function()
-		{
-		EXERCISE.reset();
-		});
-		
-		$("#previous").click(function()
-		{
-		EXERCISE.stepBack();
-		});
-		
-		$("#next").click(function()
-		{
-		EXERCISE.step();
-		});
-		
-		$("#shuffle").click(function()
-		{
-		EXERCISE.fillEquation();
-		});
-		</script>
 		</body>
-	</html>
+	</html>

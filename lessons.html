@@ -22,7 +22,7 @@
         </div>
       </div>
       <nav>
-          <div id="menu_container">
+        <div id="menu_container">
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
@@ -47,26 +47,26 @@
         </div>
       </div>
       <div class="content">
+        <h2>Lekcje</h2>
         <p>
-          Na tej stronie możesz zobaczyć w jaki sposób udowadniać równania trygonometryczne za pomocą wstawiania podstawowych wzorów.
-          Do nawigacji służą przyciski na dole strony:
-          <ul>
-            <li><b>Od początku</b> - resetuje bieżące równanie do początku</li>
-            <li><b>Poprzedni krok</b> - cofa rozwiązanie o jeden krok do tyłu</li>
-            <li><b>Nestępny krok</b> - pokazuje następny krok rozwiązania równania</li>
-            <li><b>Zmień równanie</b> - pozwala na zmianę aktualnie wyświetlanego równania</li>
-          </ul>
+          Na tej stronie możesz uczestniczyć w interaktywnych lekcjach wideo z witryny YouTube. Pomogą Ci one zrozumieć podstawy
+          trygonometrii i przygotują Cię do rozwiązywania zadań zawartych w zakładce Ćwiczenia. Lekcje są ponumerowane tak, aby
+          uprościć Twoją naukę. Do dzieła!
         </p>
-        <div id="equation_block">
-        <ul id="formulas"></ul>
-        <center>
-          <div id="equation"></div></br>
-          <button id="begin">Od początku</button>
-          <button id="previous">Poprzedni krok</button>
-          <button id="next">Następny krok</button>
-          <button id="shuffle">Zmień równanie</button>
-      </center>
-      </div>
+        <h3>Lekcja 1</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/euTwYcp3eNM" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 2</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/xrHv1nj89Nk" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 3</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/OCSkXUNfhIQ" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 4</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/xhJmJXnfGzU" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 5</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/OwQdJ0LMXZo" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 6</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/S9ynstCMkcI" frameborder="0" allowfullscreen></iframe>
+        <h3>Lekcja 7</h3>
+        <iframe width="640" height="315" src="https://www.youtube.com/embed/z6ArwvOKtCk" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
     <div id="scroll">
@@ -81,37 +81,10 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="js/string_format.js"></script>
-  <script type="text/javascript" src="js/equations.js"></script>
-  <script type="text/javascript" src="js/exercise.js"></script>
   <script type="text/javascript">
-    $(document).ready(function()
-    {
+    $(document).ready(function() {
       $('ul.sf-menu').sooperfish();
       $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
-
-      EQUATIONS.Formulas.fillFormulas();
-      EXERCISE.fillEquation();
-    });
-
-    $("#begin").click(function()
-    {
-      EXERCISE.reset();
-    });
-
-    $("#previous").click(function()
-    {
-      EXERCISE.stepBack();
-    });
-
-    $("#next").click(function()
-    {
-      EXERCISE.step();
-    });
-
-    $("#shuffle").click(function()
-    {
-      EXERCISE.fillEquation();
     });
   </script>
 </body>
