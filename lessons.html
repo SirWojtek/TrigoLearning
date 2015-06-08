@@ -7,10 +7,12 @@
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="css/blueimp-gallery.css">
+  <link rel="stylesheet" href="css/blueimp-gallery-indicator.css">
+  <link rel="stylesheet" href="css/blueimp-gallery-video.css">
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
 </head>
-
 <body>
   <div id="main">
     <header>
@@ -53,20 +55,13 @@
           trygonometrii i przygotują Cię do rozwiązywania zadań zawartych w zakładce Ćwiczenia. Lekcje są ponumerowane tak, aby
           uprościć Twoją naukę. Do dzieła!
         </p>
-        <h3>Lekcja 1</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/euTwYcp3eNM" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 2</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/xrHv1nj89Nk" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 3</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/OCSkXUNfhIQ" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 4</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/xhJmJXnfGzU" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 5</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/OwQdJ0LMXZo" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 6</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/S9ynstCMkcI" frameborder="0" allowfullscreen></iframe>
-        <h3>Lekcja 7</h3>
-        <iframe width="640" height="315" src="https://www.youtube.com/embed/z6ArwvOKtCk" frameborder="0" allowfullscreen></iframe>
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="play-pause"></a>
+        </div>
       </div>
     </div>
     <div id="scroll">
@@ -79,6 +74,12 @@
   </div>
   <!-- javascript at the bottom for fast page loading -->
   <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/blueimp-helper.js"></script>
+  <script type="text/javascript" src="js/blueimp-gallery.js"></script>
+  <script type="text/javascript" src="js/blueimp-gallery-video.js"></script>
+  <script type="text/javascript" src="js/blueimp-gallery-youtube.js"></script>
+  <script type="text/javascript" src="js/gallery.js"></script>
+  <script type="text/javascript" src="js/jquery.blueimp-gallery.js"></script>
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
   <script type="text/javascript">
