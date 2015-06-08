@@ -34,8 +34,8 @@
             <li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
             <li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>
             <li><a href="exercise1.html">Ćwiczenia</a></li>
-			<li><a href="exercise2.html">Ćwiczenia 2</a></li>
-            <li><a href="lessons.html" id="selected">Lekcje</a></li>
+			<li><a href="exercise2.html" id="selected">Ćwiczenia 2</a></li>
+            <li><a href="lessons.html">Lekcje</a></li>
           </ul>
         </div>
       </nav>
@@ -73,24 +73,24 @@
 			 showAxes(ctx,axes);
 			 switch(arguments[1]) {
 				case 1:
-					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1); 
+					funGraph(ctx,axes,fun1,"rgb(11,153,11)",1);
 					break;
 				case 2:
-					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1); 
+					funGraph(ctx,axes,fun2,"rgb(66,44,255)",1);
 					break;
 				case 3:
-					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1); 
+					funGraph(ctx,axes,fun3,"rgb(215,57,204)",1);
 					break;
 				case 4:
-					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1); 
+					funGraph(ctx,axes,fun4,"rgb(0,255,0)",1);
 					break;
 				case 5:
-					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2); 
-					break;					
+					funGraph(ctx,axes,fun5,"rgb(255,128,0)",2);
+					break;
 				//default:
 				//	default code block
 			}
-			 
+
 			 //funGraph(ctx,axes,fun2,"rgb(66,44,255)",2);
 			}
 
@@ -115,17 +115,17 @@
 			 var y0=axes.y0, h=ctx.canvas.height;
 			 var xmin = axes.doNegativeX ? 0 : x0;
 			 ctx.beginPath();
-			 ctx.strokeStyle = "rgb(128,128,128)"; 
+			 ctx.strokeStyle = "rgb(128,128,128)";
 			 ctx.moveTo(xmin,y0); ctx.lineTo(w,y0);  // X axis
 			 ctx.font = "15px bolder serif ";
 			 //context.fillStyle = '#29DFDB';
-			 ctx.fillText('x',w-8,y0+12);		
-			 ctx.fillText('0',x0+2,y0+12);		
-			 ctx.moveTo(x0,0);    
+			 ctx.fillText('x',w-8,y0+12);
+			 ctx.fillText('0',x0+2,y0+12);
+			 ctx.moveTo(x0,0);
 			 ctx.lineTo(x0,h);  // Y axis
-			 ctx.fillText('y',x0-12,8);		
+			 ctx.fillText('y',x0-12,8);
 			  //draw pi i - pi
-			 ctx.moveTo(x0+125,y0-5); 
+			 ctx.moveTo(x0+125,y0-5);
 			 ctx.lineTo(x0+125,y0+5);
 			 ctx.fillText('π',x0+120,y0+12);
 			 ctx.moveTo(x0-125,y0-5);
@@ -136,7 +136,7 @@
 		</script>
 		<script>
 		function check_form_cw1() {
-		
+
 			var f=document.cwiczenie1;
 			if ( f.Answer3.checked ==true && f.Answer1.checked == false  && f.Answer2.checked == false && f.Answer4.checked == false )
 			{
@@ -144,13 +144,13 @@
 				return true;
 			}
 			else
-			{	
+			{
 				$('#check1').jAlert('Odpowiedź błędna', "fatal", 'errboxid');
 				return false;
 			}
 		}
 		function check_form_cw2() {
-		
+
 			var f=document.cwiczenie2;
 			if ( f.Answer1.checked ==true && f.Answer3.checked == false  && f.Answer2.checked == false && f.Answer4.checked == false )
 			{
@@ -158,13 +158,13 @@
 				return true;
 			}
 			else
-			{	
+			{
 				$('#check2').jAlert('Odpowiedź błędna', "fatal", 'errboxid');
 				return false;
 			}
 		}
 		function check_form_cw3() {
-		
+
 			var f=document.cwiczenie3;
 			if ( f.Answer4.checked ==true && f.Answer3.checked == false  && f.Answer2.checked == false && f.Answer1.checked == false )
 			{
@@ -172,13 +172,13 @@
 				return true;
 			}
 			else
-			{	
+			{
 				$('#check3').jAlert('Odpowiedź błędna', "fatal", 'errboxid');
 				return false;
 			}
 		}
 		function check_form_cw4() {
-		
+
 			var f=document.cwiczenie4;
 			if ( f.Answer2.checked ==true && f.Answer3.checked == false  && f.Answer1.checked == false && f.Answer4.checked == false )
 			{
@@ -186,13 +186,13 @@
 				return true;
 			}
 			else
-			{	
+			{
 				$('#check4').jAlert('Odpowiedź błędna', "fatal", 'errboxid');
 				return false;
 			}
 		}
 		function check_form_cw5() {
-		
+
 			var f=document.cwiczenie5;
 			if ( f.Answer1.checked ==true && f.Answer3.checked == false  && f.Answer2.checked == false && f.Answer4.checked == false )
 			{
@@ -200,7 +200,7 @@
 				return true;
 			}
 			else
-			{	
+			{
 				$('#check5').jAlert('Odpowiedź błędna', "fatal", 'errboxid');
 				return false;
 			}
@@ -211,7 +211,7 @@
 		<h4>Ćw 1.<h4>
 		<canvas id="cwiczenia1" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			draw("cwiczenia1",1);		 
+			draw("cwiczenia1",1);
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
 		<form name="cwiczenie1">
@@ -219,14 +219,14 @@
 			<input type="checkbox" name="Answer2" value="0"/>y = cos(x)<br>
 			<input type="checkbox" name="Answer3" value="1"/>y = sin(3x)<br>
 			<input type="checkbox" name="Answer4" value="0"/>y = sin(x+3)<br><br>
-			<input type="button" id="check1" onclick="check_form_cw1()" value="Sprawdź" />	
-		</form>	
+			<input type="button" id="check1" onclick="check_form_cw1()" value="Sprawdź" />
+		</form>
 		<!--Czwiczenie 3-->
 		<br>
 		<h4>Ćw 2.<h4>
 		<canvas id="cwiczenia2" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			draw("cwiczenia2",2);		 
+			draw("cwiczenia2",2);
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
 		<form name="cwiczenie2">
@@ -234,14 +234,14 @@
 			<input type="checkbox" name="Answer2" value="0"/>y = cos(2x)<br>
 			<input type="checkbox" name="Answer3" value="0"/>y = sin(3x+π)<br>
 			<input type="checkbox" name="Answer4" value="0"/>y = sin(x/2+π)<br><br>
-			<input type="button" id="check2" onclick="check_form_cw2()" value="Sprawdź" />		
-		</form>	
+			<input type="button" id="check2" onclick="check_form_cw2()" value="Sprawdź" />
+		</form>
 		<!--Czwiczenie 2-->
 		<br>
 		<h4>Ćw 3.<h4>
 		<canvas id="cwiczenia3" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			draw("cwiczenia3",3);		 
+			draw("cwiczenia3",3);
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
 		<form name="cwiczenie3">
@@ -249,14 +249,14 @@
 			<input type="checkbox" name="Answer2" value="0"/>y = cos(2x)<br>
 			<input type="checkbox" name="Answer3" value="0"/>y = sin(3x+π)<br>
 			<input type="checkbox" name="Answer4" value="1"/>y = sin(x+π/2)<br><br>
-			<input type="button" id="check3" onclick="check_form_cw3()" value="Sprawdź" />		
-		</form>	
+			<input type="button" id="check3" onclick="check_form_cw3()" value="Sprawdź" />
+		</form>
 		<!--Czwiczenie 4-->
 		<br>
 		<h4>Ćw 4.<h4>
 		<canvas id="cwiczenia4" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			draw("cwiczenia4",4);		 
+			draw("cwiczenia4",4);
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
 		<form name="cwiczenie4">
@@ -264,14 +264,14 @@
 			<input type="checkbox" name="Answer2" value="1"/>y = ctg(2x)<br>
 			<input type="checkbox" name="Answer3" value="0"/>y = tg(x+π)<br>
 			<input type="checkbox" name="Answer4" value="0"/>y = ctg(x+π)<br><br>
-			<input type="button" id="check4" onclick="check_form_cw4()" value="Sprawdź" />			
-		</form>	
+			<input type="button" id="check4" onclick="check_form_cw4()" value="Sprawdź" />
+		</form>
 		<!--Czwiczenie 5-->
 		<br>
 		<h4>Ćw 5.<h4>
 		<canvas id="cwiczenia5" width="500" height="200" style="border:1px solid #c3c3c3;"></canvas>
 		<script>
-			draw("cwiczenia5",5);		 
+			draw("cwiczenia5",5);
 		</script>
 		<p>Jaki jest wzór funkcji ?</p>
 		<form name="cwiczenie5">
@@ -279,8 +279,8 @@
 			<input type="checkbox" name="Answer2" value="0"/>y = cos(2x)<br>
 			<input type="checkbox" name="Answer3" value="0"/>y = sin(3x+π/2)<br>
 			<input type="checkbox" name="Answer4" value="0"/>y = sin(x/2+π)<br><br>
-			<input type="button" id="check5" onclick="check_form_cw5()" value="Sprawdź" />		
-		</form>	
+			<input type="button" id="check5" onclick="check_form_cw5()" value="Sprawdź" />
+		</form>
 		</div>
 		</div>
 		<div id="scroll">

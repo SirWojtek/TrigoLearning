@@ -29,10 +29,10 @@
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="basicFunctions.html">Podstawowe funkcje</a></li>
-            <li><a href="basicGraphFunctions.html">Wykresy funkcji</a></li>
+            <li><a href="basicGraphFunctions.html" id="selected">Wykresy funkcji</a></li>
             <li><a href="exercise1.html">Ćwiczenia</a></li>
 			<li><a href="exercise2.html">Ćwiczenia 2</a></li>
-            <li><a href="lessons.html" id="selected">Lekcje</a></li>
+            <li><a href="lessons.html">Lekcje</a></li>
           </ul>
         </div>
       </nav>
@@ -112,18 +112,18 @@
 			 var y0=axes.y0, h=ctx.canvas.height;
 			 var xmin = axes.doNegativeX ? 0 : x0;
 			 ctx.beginPath();
-			 ctx.strokeStyle = "rgb(128,128,128)"; 
-			 ctx.moveTo(xmin,y0); 
+			 ctx.strokeStyle = "rgb(128,128,128)";
+			 ctx.moveTo(xmin,y0);
 			 ctx.lineTo(w,y0);  // X axis
 			 ctx.font = "15px bolder serif";
 			 //context.fillStyle = '#29DFDB';
 			 ctx.fillText('x',w-8,y0+12);		//name X axis
 			 ctx.fillText('0',x0+2,y0+12);		//point ()0,0)
-			 ctx.moveTo(x0,0); 
-			 ctx.lineTo(x0,h);  				// Y axis       
+			 ctx.moveTo(x0,0);
+			 ctx.lineTo(x0,h);  				// Y axis
 			 ctx.fillText('y',x0-12,8);			//name Y axis
 			 //draw pi i - pi
-			 ctx.moveTo(x0+125,y0-5); 
+			 ctx.moveTo(x0+125,y0-5);
 			 ctx.lineTo(x0+125,y0+5);
 			 ctx.fillText('π',x0+120,y0+12);
 			 ctx.moveTo(x0-125,y0-5);
